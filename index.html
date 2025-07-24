@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABOUT ME</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#about">Tentang</a></li>
+      <li><a href="#skills">Skill</a></li>
+      <li><a href="#projects">Proyek</a></li>
+      <li><a href="#malware">Malware Analyzer</a></li>
+      <li><a href="#tools">Tools</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <img src="https://i.imgur.com/Hc5BrNe.jpeg" alt="Avatar Jack" class="profile-pic" />
+    <h1 class="intro-text">Jack</h1>
+    <p class="intro-text">Dream: Malware Analyzer</p>
+    <button id="theme-toggle">Ganti Tema</button>
+  </header>
+
+  <section id="about" class="section" data-aos="fade-up">
+    <h2>Tentang Saya</h2>
+    <p>
+      Halo! Nama saya Jack, pelajar kelas 9 yang punya semangat tinggi dalam dunia teknologi.
+      Sejak Penyakit Covid-19 menyebar saya suka bermain game online. 
+	  Suatu hari saya kepikiran untuk meng-exploitasi suatu program dan bermain curang.
+	  Sejak saat itu saya jadi tertarik dengan reverse engineering.
+      Saya mulai belajar coding sejak masuk kelas 7.
+	  Bahasa pertama saya adalah Java yang direkomendasikan oleh teman saya.
+      <br /><br />
+      Saya percaya bahwa pemahaman yang dalam tentang cara kerja malware bisa membantu melindungi sistem dari serangan siber yang berbahaya. Tujuan saya adalah menjadi seorang <strong>Malware Analyzer</strong> profesional yang ahli dalam membongkar dan memahami malware dari berbagai jenis.
+    </p>
+  </section>
+
+  <section id="skills" class="section" data-aos="fade-up">
+    <h2>Skill</h2>
+
+    <div class="skill-bar">
+      <p>Reverse engineering</p>
+      <div class="bar"><div class="fill" style="width: 15%"></div></div>
+    </div>
+
+    <div class="skill-bar">
+      <p>C++</p>
+      <div class="bar"><div class="fill" style="width: 70%"></div></div>
+    </div>
+
+    <div class="skill-bar">
+      <p>Golang</p>
+      <div class="bar"><div class="fill" style="width: 70%"></div></div>
+    </div>
+	
+	<div class="skill-bar">
+      <p>Batch</p>
+      <div class="bar"><div class="fill" style="width: 20%"></div></div>
+    </div>
+
+  </section>
+
+  <section id="projects" class="section" data-aos="fade-up">
+    <h2>Proyek Saya</h2>
+    <ul>
+      <li>
+		<strong>Chrome 138 Stealer</strong> – Malware bertipe Stealer untuk mencuri kredensial seperti cookies,password, dan wallet.
+        <a href="https://t.me/anchorv1" class="download-btn" target="_blank">📥 Download Proyek</a>
+		
+	  </li>
+      <li>
+		<strong>Shellcode Injector (Golang)</strong> – Script Golang untuk meng-inject shellcode ke memori.
+		<a href="https://t.me/anchorv1" class="download-btn" target="_blank">📥 Download Proyek</a>
+	  </li>
+      <li>
+		<strong>Binder</strong> – Suatu Program untuk mengabungkan banyak file menjadi 1.
+		<a href="https://t.me/anchorv1" class="download-btn" target="_blank">📥 Download Proyek</a>
+	  </li>
+    </ul>
+  </section>
+
+  <section id="malware" class="section" data-aos="fade-up">
+    <h2>Apa Itu Malware Analyzer?</h2>
+    <p>
+      <strong>Malware Analyzer</strong> adalah orang yang menganalisis perangkat lunak berbahaya (malware)
+      untuk memahami bagaimana cara kerjanya, bagaimana ia menyebar, dan bagaimana menghapus atau mencegahnya.
+      Mereka bekerja di bidang keamanan siber, melakukan <em>reverse engineering</em>, menggunakan debugger,
+      dan sering kali bekerja sama dengan tim Blue Team atau Forensik Digital untuk mendeteksi dan menanggapi serangan.
+    </p>
+  </section>
+
+  <section id="tools" class="section" data-aos="fade-up">
+    <h2>Tools yang Sering Digunakan</h2>
+    <ul>
+      <li>🧪 Wireshark – Analisa trafik jaringan</li>
+      <li>🔍 IDA Pro – Reverse engineering malware (Static)</li>
+	   <li>🧠 x64dbg – Debugger untuk Windows binary (Dynamic)</li>
+      <li>🧬 Malcat – Binary analysis tool</li>
+      <li>🧱 HxD – Hex editor untuk file dan memori</li>
+      <li>🕵️‍♂️ Process Hacker – Melihat proses sistem secara detail</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jack. Dibuat dengan bantuan AI AWOAKWAOKWAWKAWAK</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const introTexts = document.querySelectorAll('.intro-text');
+    introTexts.forEach((text, i) => {
+      text.style.animationDelay = `${i * 2}s`;
+    });
+
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      body.classList.toggle('light', savedTheme === 'light');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light');
+      const newTheme = body.classList.contains('light') ? 'light' : 'dark';
+      localStorage.setItem('theme', newTheme);
+    });
+  </script>
+</body>
+</html>
